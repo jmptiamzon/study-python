@@ -74,3 +74,13 @@ def divByZero(val):
 
 print(divByZero(0))
 
+def divByZero():
+    val = input()
+
+    try:
+        if int(val) > 3:
+            print('Value greater than 3')
+
+        else:
+            print('Value less than 3')
+
