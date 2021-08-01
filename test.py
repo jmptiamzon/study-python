@@ -39,7 +39,7 @@ def testDef1(number):
 
 testDef1(3)
 
-def testDef2(number)
+def testDef2(number):
     return number + 1
 
 myNum = testDef2(1)
@@ -83,4 +83,6 @@ def divByZero():
 
         else:
             print('Value less than 3')
+    except: 
+        print('')
 
