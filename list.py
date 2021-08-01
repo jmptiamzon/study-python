@@ -40,7 +40,7 @@ print(list('Hello')) #['H', 'e', 'l', 'l', 'o']
 
 #loop
 
-for i in range(4)
+for i in range(4):
     print(i)
 
 #can do this
