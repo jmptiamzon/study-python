@@ -4,7 +4,7 @@ if 0 < 5:
 elif 1 > 4:
     print('hello1')
 else:
-    
+    print('')
 
 #loop
 print('My name is ')
