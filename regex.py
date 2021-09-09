@@ -82,5 +82,53 @@ phoneRegex = re.compile(r'((\d\d\d)-(\d\d\d-\d\d\d\d))')
 phoneRegex.findall('123-123-1234 567-891-0123') #[('123-123-1234', '123', '123-1234'), ('567-891-0123', '567', '891-0123')]
 
 
+#create own character class
+vowelRegex = re.compile(r'[aeiou]') #[a-z]{2} 2 letters
+consonantRegex = re.compile(r'[^aeiou]') # not in the brackets
+
+
+beginsWithHelloRegex = re.compile(r'^Hello') #string should start with Hello
+endsWithWorldRegex = re.compile(r'world!$') #$ means end of string
+
+allDigitsRegex = re.compile(r'^\d+$') #begins and end with digit
+
+atRegex = re.compile(r'.at') # dot is any chars
+nameRegex = re.compile(r'First Name: (.*) Last Name: (.*)') 
+#(.*) greedy match (.*?) non greedy match
+nameRegex.findAll('First Name: Al Last Name: Sweigart') #will return both groups since greedy
+
+nongreedy = re.compile(r'<(.*?)>')
+serve = '<To serve humans> for dinner'
+nongreedy.findAll(serve) # will return To serve humans only
+
+#.* doesnt match / get \n to get \n in the string we need to use
+dotStar = re.compile(r'.*', re.DOTALL)
+
+#if you dont want to type capital letter
+doStar = re.compile(r'.*', re.IGNORECASE) #or re.I
+
+
+namesRegex = re.compile(r'Agent (\w)\w*')
+namesRegex.findAll('Agent Alice gave the secret documents to Agent Bob.') #['A', 'B']
+namesRegex.sub(r'Agent \1****', 'Agent Alice gave the secret documents to Agent Bob.')
+#\1 here will get the first group
+#Agent A**** ......
+
+#VERBOSE to make regex more readable
+re.compile(r'''
+(\d\d\d-)|     #area code (without parens)
+(\(\d\d\d))    # or area code with parens no dash
+\d\d\d      #first 3 digits
+-           #second dash
+\d\d\d\d    # last 4 digits
+\sx\d{2,4}  # extension, like x1234
+''', re.VERBOSE | re.DOTALL | re.IGNORECASE) #to use multiple options
+
+
+
+
+
+
+
 
 
