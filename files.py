@@ -74,3 +74,12 @@ shutil.copy('c:\\documents\\test1.txt', 'c:\\documents\\yes123') #will copy file
 shutil.copytree('c:\\documents\\yes123', 'c:\\documents\\newfol') #will copy entire folder
 shutil.move('c:\\documents\\yes123\\test1.txt', 'c:\\documents\\newfol') #will move to new folder
 shutil.move('c:\\documents\\newfol\\test1.txt', 'c:\\documents\\newfol\\test2.txt') #rename file
+
+
+
+#deleting files
+import os
+os.getcwd()
+os.unlink('filename.ext') #delete single file in current working directory
+
+
